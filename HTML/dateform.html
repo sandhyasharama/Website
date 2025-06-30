@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chipi Technologies - DATE INPUT FORM</title>
+</head>
+<body>
+    <h2>Chipi Technologies - Date of Birth Input Examples</h2>
+
+    <form>
+        <label for="dob1">1. Basic DOB Input:</label>
+        <input type="date" id="dob1" name="dob1"><br><br>
+
+        <label for="dob2">2. DOB with Age Restriction(18-40 years):</label>
+        <input type="date" id="dob2" name="dob2" min="1985-01-01" max="2007-12-31"><br><br>
+        
+        <label for="dob3">3. DOB with Default Value:</label>
+        <input type="date" id="dob3" name="dob3" value="2000-01-01"><br><br>
+
+        <label for="dob4">4. Required DOB (Mandatory Field):</label>
+        <input type="date" id="dob4" name="dob4" required><br><br>
+
+        <label for="dob5">5. Read only DOB (view only):</label><br>
+        <input type="date" id="dob5" name="dob5" value="1998-05-15" readonly><br><br>
+
+        <label for="dob6">6. Disable DOB (Not Editable):</label><br>
+        <input type="date" id="dob6" name="dob6" value="1995-12-01" disabled><br><br>
+
+        <input type="submit" value="submit form">
+        <input type="reset" value="clear form">
+
+
+    </form>
+</body>
+</html>
