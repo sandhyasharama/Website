@@ -1,10 +1,10 @@
 /* attributeselectorexample.css */
 
-/^ -> It means starts with/
+/*^ -> It means starts with/
         a[href^="http"]{
             color: green;
         }
-        /$ - It means ends with/
+        /*$-it means ends with*/
         a[href$=".jpeg"]{
             font-size: 50px;
         }
@@ -35,4 +35,4 @@
         div[data-role="guest"]{
             color: red;
             background-color:blue;
-        }
+        }

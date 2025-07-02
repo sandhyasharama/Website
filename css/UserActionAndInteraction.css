@@ -80,8 +80,8 @@
     background: #f1f8e9;
 }
 .disabled-input:disabled {
-    border: 2px dashed #bdbdbd;
-    background: #3fa825;
+    border: 2px dashed rgb(29, 188, 66);
+    background: #0a3c8e;
 }
 .enabled-btn:enabled {
     background: #939993;
