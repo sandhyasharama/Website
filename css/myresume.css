@@ -3,6 +3,10 @@ body{
     margin: 0;
     background-color: whitesmoke;
     color: gray;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
 }
 .resume{
     
@@ -16,8 +20,8 @@ body{
 .myresume{
     display: flex;
     justify-content: space-between;
-    width: 50%;
-    height: 50%;
+    width: 100%;
+
     max-height: 1000px;
     margin-right: 10px;
     margin-left: 20px;
