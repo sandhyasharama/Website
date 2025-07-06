@@ -1,0 +1,49 @@
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+    background-color: whitesmoke;
+    color: grey;
+}
+.resume{
+    display: flex;
+    justify-content: space-between;
+    background-color: #808080;
+}
+
+.myresume{
+    width: 80%;
+    max-width: 1000px;
+    margin: auto;
+    padding: 20px;
+    background: whitesmoke;
+}
+
+
+.profilepicture img{
+    width: 100px;
+    height: 120px;
+    border-radius: 200px;
+    margin-right: 20px;
+}
+
+.name h1{
+    margin: 0;
+    font-size: 27px;
+    color: whitesmoke;
+
+}
+
+.rtitle{
+    font-size: 15px;
+    color:green;
+}
+
+.email{
+    
+}
+.summary{
+    margin-top: 3px;
+    font-size: 12px;
+    color: whitesmoke;
+
+}
