@@ -16,7 +16,7 @@ body{
 .myresume{
     display: flex;
     justify-content: space-between;
-    width: 80%;
+    width: 50%;
     max-height: 1000px;
     margin-right: 10px;
     margin-left: 20px;
@@ -33,7 +33,7 @@ body{
 .profilepicture h1{
     margin: 1;
     font-size: 16px;
-    color: whitesmoke;
+    
 }
 
 .rtitle{
@@ -59,7 +59,7 @@ body{
     
     padding-bottom: 5px;
     margin-bottom: 10px;
-    color: white;
+    
 
 }
 .section p{
@@ -68,23 +68,20 @@ body{
 }
 .rightside .section h2{
     
-    margin-left: 20px;
+    margin-left: 40px;
     justify-content: space-between;
-    
-    background: white;
-    
-    color: black;
+     color: black;
 }
 .rightside .section p{
-    margin-left: 20px;
+    margin-left: 40px;
     color: black;
-    background: white;
+    
 }
 .rightside .section ul{
     font-size: 13px;
-    margin-left: 20px;
+    margin-left: 40px;
     color: black;
-    background-color: white;
+    
 }
 
 .skills{
@@ -92,7 +89,7 @@ body{
     grid-template-columns: repeat(auto-fit,minmax(120px, 1fr));
     gap: 10px;
     color: black;
-    margin-left: 20px;
+    margin-left: 40px;
     
 }
 
