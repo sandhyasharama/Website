@@ -2,20 +2,24 @@ body{
     font-family: Arial,sans-serif;
     margin: 0;
     background-color: whitesmoke;
-    color: grey;
+    color: gray;
 }
 .resume{
+    
     background: black;
     color: white;
-    width: 35%;
+    width: 20%;
     padding: 30px 20px;
     text-align: center;
 }
 
 .myresume{
-    width: 80%;
+    display: flex;
+    justify-content: space-between;
+    width: 90%;
     max-height: 1000px;
-    margin: auto;
+    margin-right: 10px;
+    margin-left: 20px;
     padding: 20px;
     background: whitesmoke;
 }
@@ -26,15 +30,20 @@ body{
     border-radius: 200px;
     margin-right: 20px;
 }
-.name h1{
+.profilepicture h1{
     margin: 1;
-    font-size: 17px;
+    font-size: 16px;
     color: whitesmoke;
 }
 
 .rtitle{
-    font-size: 14px;
+    font-size: 13px;
     color:whitesmoke;
+    
+    
+}
+.myresume ul{
+    padding-left: 18px;
 }
 
 .section{
@@ -42,13 +51,45 @@ body{
     text-align: left;
 }
 
-.section h2{
+.section h3{
     font-size: 14px;
-    border-bottom: 1px solid gray;
+    
     padding-bottom: 5px;
     margin-bottom: 10px;
     color: white;
 
 }
+.section p{
+    font-size: 13px;
+    line-height: 1.2;
+}
+.rightside .section h2{
+    
+    margin-left: 20px;
+    justify-content: space-between;
+    
+    background: white;
+    
+    color: black;
+}
+.rightside .section p{
+    margin-left: 20px;
+    color: black;
+    background: white;
+}
+.rightside .section ul{
+    font-size: 13px;
+    margin-left: 20px;
+    color: black;
+    background-color: white;
+}
 
+.skills{
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(120px, 1fr));
+    gap: 10px;
+    color: black;
+    margin-left: 20px;
+    
+}
 
