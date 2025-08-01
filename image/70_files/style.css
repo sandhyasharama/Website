@@ -1,0 +1,1266 @@
+* {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body, html {
+      font-family: Arial, sans-serif;
+      scroll-behavior: smooth;
+      overflow-x: hidden;
+      background-color: white;
+    }
+
+    header {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background-color: #070c0c;
+      color: white;
+      display: flex;
+      justify-content: flex-end;
+      padding: 10px 20px;
+      font-size: 14px;
+      z-index: 1000;
+    }
+
+    header p {
+      margin-left: 20px;
+      font-weight: bold;
+    }
+
+    header p strong {
+      font-weight: normal;
+      color: #ccc;
+    }
+
+    nav.nav-list {
+      position: fixed;
+      top: 40px;
+      width: 100%;
+      background-color: #f1f1f1;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 10px 30px;
+      z-index: 999;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    .nav-left {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .nav-left img {
+      height: 80px;
+      border-radius: 25px;
+      width: auto;
+      cursor: pointer;
+      transition: transform 0.3s ease;
+    }
+
+    .nav-left h1 {
+      font-size: 20px;
+      color: #415c80;
+      cursor: pointer;
+      transition: color 0.3s ease;
+      
+    }
+
+    nav.nav-list ul {
+      list-style: none;
+      display: flex;
+      gap: 20px;
+      padding: 0;
+      margin: 0;
+    }
+
+    nav.nav-list ul li a {
+      text-decoration: none;
+      color: #000;
+      font-weight: bold;
+      position: relative;
+      padding: 5px;
+    }
+
+    nav.nav-list ul li a::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      height: 2px;
+      width: 0;
+      background: #da1414;
+      transition: width 0.3s ease;
+    }
+
+    nav.nav-list ul li a:hover {
+      color: #da1414;
+    }
+
+    nav.nav-list ul li a:hover::after {
+      width: 100%;
+    }
+
+    .slider {
+      position: relative;
+      width: 100%;
+      height: 100vh;
+      margin-top: 130px;
+      overflow: hidden;
+    }
+
+    .slides {
+      position: relative;
+      width: 100%;
+      height: 100%;
+    }
+
+    .slide {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      opacity: 0;
+      transition: opacity 1s ease-in-out;
+      z-index: 0;
+    }
+
+    .slide img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    input[type="radio"] {
+      display: none;
+    }
+
+    #slide1:checked ~ .slides .s1,
+    #slide2:checked ~ .slides .s2,
+    #slide3:checked ~ .slides .s3,
+    #slide4:checked ~ .slides .s4,
+    #slide5:checked ~ .slides .s5,
+    #slide6:checked ~ .slides .s6,
+    #slide7:checked ~ .slides .s7,
+    #slide8:checked ~ .slides .s8 {
+      opacity: 1;
+      z-index: 1;
+    }
+
+    .navigation-manual {
+      position: absolute;
+      width: 100%;
+      bottom: 40px;
+      display: flex;
+      justify-content: center;
+      z-index: 10;
+    }
+
+    .manual-btn {
+      border: 2px solid #fff;
+      padding: 8px;
+      border-radius: 50%;
+      cursor: pointer;
+      transition: background 0.3s ease;
+      margin: 0 10px;
+    }
+
+    .manual-btn:hover {
+      background: #fff;
+    }
+
+    .logo-banner {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      color: white;
+      text-align: center;
+      z-index: 10;
+      font-size: 32px;
+      font-weight: bold;
+      text-shadow: 2px 2px 5px rgba(0,0,0,0.7);
+    }
+
+    @keyframes autoplay {
+      0%, 20% { opacity: 1; z-index: 1; }
+      25%, 100% { opacity: 0; z-index: 0; }
+    }
+
+    .s1 { animation: autoplay 10s infinite; animation-delay: 0s; }
+    .s2 { animation: autoplay 10s infinite; animation-delay: 4s; }
+    .s3 { animation: autoplay 10s infinite; animation-delay: 8s; }
+    .s4 { animation: autoplay 10s infinite; animation-delay: 12s; }
+    .s5 { animation: autoplay 10s infinite; animation-delay: 16s; }
+    .s6 { animation: autoplay 10s infinite; animation-delay: 20s; }
+    .s7 { animation: autoplay 10s infinite; animation-delay: 24s; }
+    .s8 { animation: autoplay 10s infinite; animation-delay: 28s; }
+
+    @media (max-width: 768px) {
+      nav.nav-list {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      nav.nav-list ul {
+        flex-direction: column;
+        width: 100%;
+        gap: 10px;
+        margin-top: 10px;
+      }
+
+      .nav-left {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 5px;
+      }
+    }
+
+    .services-section {
+      padding: 60px 20px;
+      max-width: 1200px;
+      margin: auto;
+      flex-direction: row-reverse;
+
+    }
+
+    .services-section h1 {
+      text-align: center;
+      font-size: 36px;
+      color: #1e3a5f;
+      margin-bottom: 40px;
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 30px;
+    }
+
+    .service-card {
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      padding: 20px;
+      text-align: center;
+      transition: transform 0.3s ease;
+    }
+
+    .service-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+
+    }
+
+    .service-card img {
+      width: 90%;
+      height: 280px;
+      object-fit: cover;
+      border-radius: 10px;
+      margin-bottom: 15px;
+      
+    }
+
+    .service-card h3 {
+      font-size: 20px;
+      margin-bottom: 10px;
+      color: #1e3a5f;
+    }
+
+    .service-card p {
+      font-size: 14px;
+      color: #666;
+      margin-bottom: 15px;
+    }
+
+    .service-card button {
+      padding: 10px 20px;
+      background: #1e3a5f;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+
+    .service-card button:hover {
+      background: #16314a;
+    }
+
+.portfolio {
+  background-color: rgba(0, 0, 0, 0.888);
+  padding: 50px 20px;
+  text-align: center;
+  left: 20px;
+  right: 20px;
+  box-sizing: border-box;
+
+}
+
+.portfolio h1 {
+  font-size: 36px;
+  color: #0ea9eb;
+  margin-bottom: 10px;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+  font-weight: bold;
+  
+}
+.portfolio h3 {
+  font-size: 36px;
+  color: #a412a9;
+  margin-bottom: 10px;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+  font-weight: bold;
+  margin-top: 20px;
+  text-align: center;
+  font-family: 'Arial', sans-serif;
+
+  
+}
+
+.portfolio p {
+  font-size: 18px;
+  color: #137394;
+  margin-bottom: 30px;
+}
+
+.portfolio-slider {
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+}
+
+.portfolio-track {
+  display: flex;
+  width: max-content;
+  animation: scrollPortfolio 30s linear infinite;
+  gap: 30px;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.portfolio-track img {
+  height: 350px;
+  width: auto;
+  border-radius: 10px;
+  transition: transform 0.3s ease;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  filter: brightness(0.8);
+  margin: 0 10px;
+  cursor: pointer;
+  object-fit: cover;
+
+}
+
+.portfolio-track img:hover {
+  transform: scale(1.05);
+  background-color: #000;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+  cursor: pointer;
+  filter: brightness(0.9);
+
+
+}
+
+@keyframes scrollPortfolio {
+  0% {
+    transform: translateX(0);
+
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .portfolio-track img {
+    height: 180px;
+  }
+}
+.scrollPortfolio {
+  flex: 0 0 auto;
+  width: 300px; /* Adjust width as needed */
+  margin: 0 10px;
+}
+
+ 
+
+.about-us {
+  margin: 50px auto; /* Centering the section and providing top/bottom margin */
+  padding: 40px;
+  background-color: white; /* White background for the main content area */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+  text-align: center; /* To center the "About Us" heading */
+}
+
+.about-us h1 {
+  font-size: 2.5em; /* Adjust font size for the main heading */
+  color: #0ab7e3;
+  margin-bottom: 40px;
+  text-align: center;
+}
+
+.about-us-content {
+  background-color: white;
+  display: flex; /* Use flexbox for image and text layout */
+  align-items: center; /* Vertically align items in the center */
+  gap: 30px; /* Space between the image and the text */
+  text-align: left; /* Reset text alignment for the content */
+}
+
+.about-us-content img {
+  max-width: 350px; /* Adjust image width as needed */
+  height: auto;
+  border-radius: 5px; /* Slightly rounded corners for the image, if desired */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow for the image */
+  transition: transform 0.3s ease; /* Smooth scaling effect on hover */
+
+}
+.about-us-content img:hover {
+  transform: scale(1.05); /* Slightly enlarge the image on hover */
+}
+
+.about-us-content .text-content {
+  flex: 1; /* Allows the text content to take up available space */
+}
+
+.about-us-content h3 {
+  font-size: 1.8em; /* Adjust font size for the subheading */
+  color: #0f5aa9;
+  margin-top: 0; /* Remove default top margin */
+  margin-bottom: 15px;
+  line-height: 1.3;
+}
+
+.about-us-content p {
+  font-size: 1em;
+  color: #0e0e0e;
+  line-height: 1.6;
+  margin-bottom: 25px;
+}
+
+.about-us-content button {
+  height: 50px; /* Adjust height for the button */
+  width: 200px; /* Fixed width for the button */
+  background-color: #5e5858; /* White background for the button */
+  color: #d8d6d8; /* Dark text color for the button */
+  border: 1px solid #ccc; /* Light grey border */
+  padding: 10px 25px;
+  font-size: 1em;
+  text-transform: uppercase;
+  cursor: pointer;
+  border-radius: 3px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  letter-spacing: 0.5px;
+}
+
+.about-us-content button:hover {
+  background-color: #e0e0e0; /* Slightly darker grey on hover */
+  color: #000;
+
+}
+
+/* Optional: For responsiveness on smaller screens */
+@media (max-width: 768px) {
+  .about-us-content {
+    flex-direction: column; /* Stack items vertically on smaller screens */
+    text-align: center; /* Center text when stacked */
+  }
+
+  .about-us-content img {
+    max-width: 80%; /* Adjust image size for smaller screens */
+    margin-bottom: 20px;
+  }
+
+  .about-us-content .text-content {
+    text-align: center; /* Center text content */
+  }
+
+  .about-us h1 {
+    font-size: 2em;
+  }
+
+  .about-us-content h3 {
+    font-size: 1.5em;
+  }
+}
+
+
+/* Styles for the entire "Fun Facts" section */
+.fun-facts-section {
+    padding: 80px 20px; /* Add top/bottom padding for spacing from other content */
+    text-align: center; /* Centers the heading and the stats container */
+    background-color: #ffffff; /* White background for the section area */
+    /* If you want the light grey background from the image to cover the whole section,
+       change this to #f9f9f9 or set it on the body. The image shows a white section. */
+}
+
+.fun-facts-section h2 {
+    font-size: 2.5em; /* Large, bold font for the main heading */
+    color: #0c74d6; /* Dark grey color */
+    margin-bottom: 60px; /* Space below the heading and above the stats */
+    font-weight: bold; /* Make sure it's bold */
+}
+
+/* Styles for the container of all individual stat items */
+.stats-container {
+    display: flex; /* Use flexbox to arrange items horizontally */
+    justify-content: center; /* Centers the items horizontally if there's extra space */
+    flex-wrap: wrap; /* Allows items to wrap to the next line on smaller screens */
+    gap: 40px; /* Space between each stat item */
+    max-width: 1200px; /* Max width for the container to keep items from spreading too wide */
+    margin: 0 auto; /* Center the container itself */
+}
+
+/* Styles for each individual stat item (circle + text) */
+.stat-item {
+    text-align: center; /* Ensures the circle and description are centered within their own column */
+    /* No explicit width, let flexbox handle it, but you could add min-width if needed */
+}
+
+/* Styles for the circular element */
+.circle {
+    width: 160px; /* Adjusted size to match the image */
+    height: 160px; /* Must be equal to width for a perfect circle */
+    border: 4px solid black; /* Black border */
+    border-radius: 50%; /* Makes the div a perfect circle */
+    display: flex; /* Use flexbox to center the number inside */
+    justify-content: center; /* Horizontally center the number */
+    align-items: center; /* Vertically center the number */
+    background-color: white; /* White background inside the circle */
+    margin: 0 auto 20px auto; /* Center the circle and add space below it */
+    box-shadow: 0 0 0 5px rgba(255, 255, 255, 0.7); /* Subtle white outer halo/shadow */
+    cursor: pointer;
+    transition: transform 0.3s ease; /* Smooth scaling effect on hover */
+}
+ 
+.circle:hover {
+    transform: scale(1.05); /* Slightly enlarge the circle on hover */
+    box-shadow: 0 0 0 8px rgba(255, 255, 255, 0.9); /* Slightly increase the halo/shadow on hover */
+}
+/* Styles for the number inside the circle */
+.number {
+    font-family: 'Times New Roman', Times, serif; /* Or a similar serif font */
+    font-size: 3.2em; /* Adjusted font size for a closer match */
+    font-weight: normal; /* The numbers in the image don't appear bold */
+    color: #333; /* Dark color for the number */
+    font-style: normal; /* The numbers in this image don't appear italic */
+}
+
+/* Styles for the description text below the circle */
+.description {
+    font-family: Arial, sans-serif; /* Standard sans-serif font */
+    font-size: 1.1em; /* Adjusted font size for the description */
+    color: #888; /* Grey color for the text */
+    margin-top: 0; /* Remove default top margin */
+    text-transform: capitalize; /* Capitalize the first letter of each word */
+    letter-spacing: 0.5px;
+}
+
+/* Responsive adjustments for smaller screens */
+@media (max-width: 992px) {
+    .stats-container {
+        gap: 30px; /* Reduce gap on smaller screens */
+    }
+    .circle {
+        width: 140px;
+        height: 140px;
+    }
+    .number {
+        font-size: 2.8em;
+    }
+    .description {
+        font-size: 1em;
+    }
+}
+
+@media (max-width: 768px) {
+    .fun-facts-section h2 {
+        font-size: 2em;
+        margin-bottom: 40px;
+    }
+    .stats-container {
+        flex-direction: column; /* Stack items vertically on very small screens */
+        align-items: center; /* Center them when stacked */
+    }
+    .circle {
+        width: 120px;
+        height: 120px;
+    }
+    .number {
+        font-size: 2.5em;
+    }
+}
+
+
+.studio-rent {
+  position: relative;
+  width: 100%;
+  margin: 50px auto; /* Centering the section and providing top/bottom margin */
+  background-color: black; /* White background for the main content area */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+  text-align: center; /* To center the "About Us" heading */
+}
+
+.studio-rent h1 {
+  font-size: 2.5em; /* Adjust font size for the main heading */
+  color: #0ab7e3;
+  margin-bottom: 40px;
+  text-align: center;
+}
+
+.studio-content {
+  justify-content: center;
+  padding: 20px;
+
+  background-color: black;
+  display: flex; /* Use flexbox for image and text layout */
+  align-items: center; /* Vertically align items in the center */
+  gap: 30px; /* Space between the image and the text */
+  text-align: left; /* Reset text alignment for the content */
+}
+
+.studio-content img {
+  justify-content: center;
+  width: 300; /* Adjust image width as needed */
+  height: 530px; /* Set a maximum height for the image */
+  border-radius: 5px; /* Slightly rounded corners for the image, if desired */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow for the image */
+  transition: transform 0.3s ease; /* Smooth scaling effect on hover */
+
+}
+
+.studio-content .text-content {
+  flex: 1; /* Allows the text content to take up available space */
+}
+
+.studio-content h3 {
+  font-size: 1.8em; /* Adjust font size for the subheading */
+  color: #0f5aa9;
+  margin-top: 0; /* Remove default top margin */
+  margin-bottom: 15px;
+  line-height: 1.3;
+}
+
+.studio-content p {
+  font-size: 1em;
+  color: white;
+  line-height: 1.6;
+  margin-bottom: 25px;
+}
+
+.studio-content button {
+  height: 50px; /* Adjust height for the button */
+  width: 200px; /* Fixed width for the button */
+  background-color: #5e5858; /* White background for the button */
+  color: #d8d6d8; /* Dark text color for the button */
+  border: 1px solid #ccc; /* Light grey border */
+  padding: 10px 25px;
+  font-size: 1em;
+  text-transform: uppercase;
+  cursor: pointer;
+  border-radius: 3px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  letter-spacing: 0.5px;
+}
+
+.studio-content button:hover {
+  background-color: #e0e0e0; /* Slightly darker grey on hover */
+  color: #000;
+
+}
+.studio-content img:hover {
+  transform: scale(1.05); /* Slightly enlarge the image on hover */
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5); /* Increase shadow on hover */
+}
+/* Optional: For responsiveness on smaller screens */
+@media (max-width: 768px) {
+  .studio-content {
+    flex-direction: column; /* Stack items vertically on smaller screens */
+    text-align: center; /* Center text when stacked */
+  }
+
+  .studio-content img {
+    max-width: 80%; /* Adjust image size for smaller screens */
+    margin-bottom: 20px;
+  }
+
+  .studio-content .text-content {
+    text-align: center; /* Center text content */
+  }
+
+  .studio-rent h1 {
+    font-size: 2em;
+  }
+
+  .studio-content h3 {
+    font-size: 1.5em;
+  }
+}
+
+
+/* Styles for the Testimonials Section */
+.testimonials-section {
+    padding: 80px 20px;
+    background-color: #ffffff;
+    text-align: center;
+}
+
+.testimonials-section h1 {
+    font-size: 2.5em;
+    color: #333;
+    margin-bottom: 60px;
+    font-weight: bold;
+}
+
+/* Container for the slider area - hides overflowing content */
+.testimonial-slider-container {
+    max-width: 1000px; /* Adjust based on how many testimonials you want to show at once */
+    margin: 0 auto;
+    overflow: hidden; /* CRITICAL: Hides content outside this container */
+    position: relative; /* Needed for absolute positioning or if you add nav arrows later */
+    padding-bottom: 30px; /* Space for potential shadow/overflow */
+}
+
+/* The track that actually slides */
+.testimonial-track {
+    display: flex;
+    /* We'll calculate the width of this track in the animation */
+    /* Total unique items: 3. Duplicated one, so 4 items in track. */
+    /* If showing 3 items at once, track width is (4 / 3) * 100% = 133.33% */
+    /* If showing 2 items at once, track width is (4 / 2) * 100% = 200% */
+    /* Let's aim to show 2.5-3 items at once on large screens */
+    /* (Number of items in track) * (testimonial-item max-width + gap) */
+    width: calc(4 * (380px + 30px));
+    animation: slideTestimonials 10s linear infinite; /* Animation definition */
+}
+
+/* Pause animation on hover */
+.testimonial-slider-container:hover .testimonial-track {
+    animation-play-state: paused;
+}
+
+/* Styles for individual testimonial items */
+.testimonial-item {
+    background-color: #fefefe;
+    border: 1px solid #eee;
+    border-radius: 8px;
+    padding: 30px;
+    min-width: 280px; /* Minimum width for each card */
+    max-width: 380px; /* Max width for each card */
+    /* This sets the width to roughly 1/3 of the container minus gap */
+    /* Adjust width to be flexible within the track. Let's make it fixed initially for simpler animation */
+    width: calc((100% / 3) - (30px / 3)); /* This width calculation is relative to the slider container */
+    flex-shrink: 0; /* Prevent items from shrinking */
+    margin-right: 30px; /* Gap between items */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    text-align: left;
+    position: relative;
+    box-sizing: border-box; /* Include padding and border in the element's total width and height */
+}
+
+/* Remove margin-right for the last visible item to prevent extra space at the end of the view */
+/* This is a bit tricky with dynamic slides. For now, keep it on all */
+
+.testimonial-item .quote {
+    font-size: 1.1em;
+    color: #555;
+    line-height: 1.7;
+    margin-bottom: 15px;
+    position: relative;
+    padding-left: 20px;
+}
+
+.testimonial-item .quote::before {
+    content: "\201C";
+    font-size: 3em;
+    color: #ddd;
+    position: absolute;
+    left: 0;
+    top: 0;
+    line-height: 1;
+    opacity: 0.6;
+}
+
+.testimonial-item .author {
+    font-size: 0.95em;
+    color: #777;
+    font-weight: bold;
+    margin-top: 15px;
+    text-align: right;
+}
+
+/* Keyframe Animation for sliding */
+@keyframes slideTestimonials {
+    0% {
+        transform: translateX(0); /* Start at the beginning */
+    }
+    100% {
+        /* Move left by the width of one full set of unique testimonials */
+        /* If 3 unique items, move by the width of 3 items plus their gaps */
+        /* (3 * 380px) + (3 * 30px) = 1140px + 90px = 1230px */
+        /* Or, simply by the width of the original content before duplication */
+        /* Move by the total width of the 3 original items + gaps */
+        transform: translateX(calc(-1 * (3 * (380px + 30px))));
+    }
+}
+
+/* Responsive adjustments */
+@media (max-width: 1000px) {
+    .testimonial-slider-container {
+        max-width: 700px; /* Show maybe 2 items at a time */
+    }
+    .testimonial-track {
+        /* Adjusted width for 4 items, showing ~2 at a time on smaller screens */
+        /* Adjust item width and gap for this breakpoint */
+        width: calc(4 * (320px + 15px));
+        animation: slideTestimonials_sm 20s linear infinite;
+    }
+    .testimonial-item {
+        max-width: 320px; /* Adjust item max-width */
+        margin-right: 20px; /* Adjust gap */
+        width: calc((100% / 2) - (20px / 2));
+    }
+
+    @keyframes slideTestimonials_sm {
+        0% {
+            transform: translateX(0);
+        }
+        100% {
+            transform: translateX(calc(-1 * (3 * (320px + 20px)))); /* Move by 3 items */
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    .testimonials-section h1 {
+        font-size: 2em;
+        margin-bottom: 40px;
+    }
+    .testimonial-slider-container {
+        max-width: 90%; /* Allow wider on mobile, but center */
+    }
+    .testimonial-track {
+        /* Now we show 1 item at a time, the track will be 4 * (item_width + margin) */
+        /* Full width plus gap */
+        width: calc(4 * (100% + 20px));
+        animation: slideTestimonials_xs 20s linear infinite; /* New animation for single item view */
+        /* To make animation smooth, items need to be same width */
+        gap: 0; /* Remove gap if items are full width */
+    }
+    .testimonial-item {
+        min-width: 100%; /* Each item takes full width of the container */
+        max-width: 100%;
+        margin-right: 20px; /* Keep a small margin to show next item peeking */
+        padding: 25px;
+    }
+    .testimonial-item:last-child {
+        margin-right: 0; /* No margin on the very last item in the track */
+    }
+    .testimonial-item .quote {
+        font-size: 1em;
+    }
+
+    @keyframes slideTestimonials_xs {
+        0% {
+            transform: translateX(0);
+        }
+        100% {
+            /* Move by the width of 3 full testimonials (original set) */
+            /* Move by 3 items + their margins */
+            transform: translateX(calc(-1 * (3 * (100% + 20px))));
+        }
+    }
+}
+
+
+/* Main Footer Section */
+
+.main-footer {
+
+    background-color: #333; /* Dark grey background as in the image */
+
+    color: #fff; /* White text color for the footer */
+
+    padding: 60px 20px; /* Top/bottom padding for the footer */
+
+}
+
+
+
+.footer-container {
+
+    display: flex; /* Use flexbox to arrange columns */
+
+    flex-wrap: wrap; /* Allow columns to wrap on smaller screens */
+
+    justify-content: space-between; /* Distributes space between columns */
+
+    max-width: 1200px; /* Max width of the footer content */
+
+    margin: 0 auto; /* Center the footer content */
+
+    gap: 30px; /* Space between columns */
+
+}
+
+
+
+.footer-column {
+
+    flex: 1; /* Allows columns to grow and shrink */
+
+    min-width: 250px; /* Minimum width before wrapping */
+
+    padding-right: 20px; /* Space for content within columns */
+
+    box-sizing: border-box; /* Include padding in width */
+
+}
+
+
+
+/* Headings in Footer */
+
+.footer-column h3 {
+
+    font-size: 1.2em; /* Smaller font size for column headings */
+
+    color: #fff; /* White color */
+
+    margin-bottom: 25px; /* Space below heading */
+
+    position: relative; /* For the red underline */
+
+    padding-bottom: 10px; /* Space for the underline */
+
+    text-transform: uppercase; /* Uppercase as in the image */
+
+    letter-spacing: 0.5px;
+
+}
+
+
+
+/* Red underline for headings */
+
+.footer-column h3::after {
+
+    content: '';
+
+    position: absolute;
+
+    left: 0;
+
+    bottom: 0;
+
+    width: 40px; /* Length of the underline */
+
+    height: 3px; /* Thickness of the underline */
+
+    background-color: #ff0000; /* Red color */
+
+}
+
+
+
+/* Paragraphs in Footer */
+
+.footer-column p {
+
+    font-size: 0.9em; /* Smaller font size for text */
+
+    line-height: 1.8;
+
+    color: #ccc; /* Lighter grey for paragraph text */
+
+    margin-bottom: 15px;
+
+}
+
+
+
+/* Read more link */
+
+.read-more-footer {
+
+    color: #ff0000; /* Red color */
+
+    text-decoration: none; /* No underline */
+
+    font-size: 0.9em;
+
+    font-weight: bold;
+
+    display: inline-block; /* Allows margin and padding */
+
+    margin-top: 10px;
+
+    transition: color 0.3s ease;
+
+}
+
+
+
+.read-more-footer:hover {
+
+    color: #fff; /* White on hover */
+
+}
+
+
+
+/* Social Icons */
+
+.social-icons {
+
+    margin-top: 20px;
+
+    display: flex; /* Arrange icons in a row */
+
+    gap: 10px; /* Space between icons */
+
+}
+
+
+
+.social-icon {
+
+    display: flex; /* Use flex for centering icon inside */
+
+    justify-content: center;
+
+    align-items: center;
+
+    width: 35px; /* Size of the icon background */
+
+    height: 35px; /* Size of the icon background */
+
+    border-radius: 50%; /* Makes the background circular */
+
+    background-color: #555; /* Darker grey background for icons */
+
+    color: #fff; /* White icon color */
+
+    font-size: 1.1em;
+
+    text-decoration: none;
+
+    transition: background-color 0.3s ease;
+
+}
+
+
+
+.social-icon:hover {
+
+    background-color: #ff0000; /* Red on hover */
+
+}
+
+
+
+/* List styles (Quick Links, Services) */
+
+.footer-column ul {
+
+    list-style: none; /* Remove bullet points */
+
+    padding: 0; /* Remove default padding */
+
+    margin: 0;
+
+}
+
+
+
+.footer-column ul li {
+
+    margin-bottom: 10px; /* Space between list items */
+
+}
+
+
+
+.footer-column ul li a {
+
+    color: #ccc; /* Lighter grey for links */
+
+    text-decoration: none; /* No underline */
+
+    font-size: 0.9em;
+
+    transition: color 0.3s ease;
+
+}
+
+
+
+.footer-column ul li a:hover {
+
+    color: #ff0000; /* Red on hover */
+
+}
+
+
+
+/* Services column specific styling */
+
+.services-col .services-list {
+
+    display: flex; /* Use flex for the two columns of services */
+
+    gap: 20px; /* Space between service sub-columns */
+
+}
+
+
+
+.services-col .services-list ul {
+
+    flex: 1; /* Each sub-column takes equal space */
+
+}
+
+
+
+/* Reach Us column specific styling */
+
+.reach-us-col .contact-info p {
+
+    margin-bottom: 10px; /* Adjust spacing for contact lines */
+
+    display: flex; /* For icon alignment */
+
+    align-items: flex-start; /* Align text to top if multiple lines */
+
+    gap: 10px; /* Space between icon and text */
+
+}
+
+
+
+.reach-us-col .contact-info p strong {
+
+    color: #fff; /* White for the bold studio name */
+
+}
+
+
+
+.reach-us-col .contact-info p i {
+
+    font-size: 1.1em;
+
+    color: #ff0000; /* Red color for icons */
+
+    margin-top: 2px; /* Slight adjustment for icon alignment */
+
+}
+
+
+
+
+
+/* Responsive Adjustments */
+
+@media (max-width: 992px) {
+
+    .footer-column {
+
+        min-width: 45%; /* Two columns per row on medium screens */
+
+    }
+
+    .services-col .services-list {
+
+        flex-direction: column; /* Stack service lists vertically if space is tight */
+
+        gap: 0;
+
+    }
+
+    .services-col .services-list ul {
+
+        flex: none; /* Remove flex growing for stacked lists */
+
+    }
+
+}
+
+
+
+@media (max-width: 768px) {
+
+    .footer-container {
+
+        flex-direction: column; /* Stack all columns vertically on small screens */
+
+        align-items: flex-start; /* Align content to the left when stacked */
+
+        gap: 40px; /* Increase gap between stacked columns */
+
+    }
+
+
+
+    .footer-column {
+
+        min-width: 100%; /* Each column takes full width */
+
+        padding-right: 0; /* Remove right padding */
+
+    }
+
+
+
+    /* Ensure column headings stay left-aligned */
+
+    .footer-column h3 {
+
+        text-align: left;
+
+    }
+
+}
+
+
+
+@media (max-width: 480px) {
+
+    .main-footer {
+
+        padding: 40px 15px;
+
+    }
+
+    .footer-column h3 {
+
+        font-size: 1.1em;
+
+    }
+
+    .footer-column p,
+
+    .footer-column ul li a {
+
+        font-size: 0.85em;
+
+    }
+
+    .social-icon {
+
+        width: 30px;
+
+        height: 30px;
+
+        font-size: 1em;
+
+    }
+
+}
+
