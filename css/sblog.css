@@ -11,7 +11,6 @@ body{
     background-color: blue;
     padding: 1px 2px;
     position: relative;
-    
     display: flex;
     justify-content: center;
     color: white;
@@ -29,6 +28,7 @@ body{
     position: relative;
     font-weight: bold;
     gap: 20px;
+    
 
 }
 
@@ -66,14 +66,11 @@ body{
     
 }
 
-
-
 .small{
     width: 137vh;
     height: 7vh;
     margin-left: 60px;
-    background-color: rgb(175, 100, 245);
-    
+    background-color: rgb(175, 100, 245); 
 }
 .small h1{
     font-size: 22px;
@@ -89,8 +86,6 @@ body{
     background-color: rgb(48, 48, 99);
     display: flex;
     justify-content: center;
-
-
 }
 .medium img{
     font-size: 20px;
@@ -113,10 +108,6 @@ body{
     height: 42vh;
     margin-right: 0px;
     background-color: rgb(48, 48, 99);
-
-    
-    
-
 }
 .large img{
     display: flex;
@@ -128,9 +119,6 @@ body{
     position: relative;
     top: -15px;
     
-    
-    
-
 }
 .large h3{
     color: white;
@@ -153,9 +141,8 @@ body{
 
 .last{
     display: flex;
-    
     position: relative;
-    top: -450px;
+    overflow: hidden;
     
 }
 
@@ -164,19 +151,21 @@ body{
     transform: translate(80px,40px);
     color: rgb(186, 201, 238);
     align-items: right;
-    font-size: 29px
+    font-size: 29px;
+    margin-top: 40px;
+    
    
 }
 .box3 p {
     display: flex;
-    transform: translate(80px,40px);
+   transform: translate(80px,40px);
     color: rgb(186, 201, 238);
     align-items: right;
-
+    
 }
 .box3 strong{
     display: flex;
-    transform: translate(80px,40px);
+   transform: translate(80px,40px);
     color: rgb(186, 201, 238);
     font-size: 20px;
 }
@@ -206,7 +195,8 @@ body{
     border-radius: 10px;
     color: white;
     position: relative;
-    top: -400px;
+    
+    overflow: hidden;
 }
 
 .comment h3{
@@ -247,7 +237,7 @@ body{
     height: 40vh;
     color: white;
     position: relative;
-    top: -400px;
+    overflow: hidden;
 }
 .stop{
     display: flex;
@@ -286,4 +276,9 @@ body{
     display: flex;
     justify-content: center;
 }
+
+
+
+
+
 
