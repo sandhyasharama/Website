@@ -41,6 +41,9 @@ header a{
     color: brown;
     transition: 0.6s ease-in-out;
 }
+.nav .menu-icon a{
+    color: black ;
+}
 .nav .menu{
      display: flex;
 }
@@ -150,4 +153,142 @@ header a{
 }
 .categoryimage a{
     text-decoration: none;
+}
+.middle2 p{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    font-size: 30px;
+    padding: 60px 180px;
+}
+.lastimage{
+    width: 100%;
+    background-color: beige;
+}
+.lastimagecontent{
+   display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(250px, 1fr));
+    gap: 10px;  
+}
+.salesaree img{
+    border-radius: 8px;
+    border: solid brown 6px;
+    width: 270px;
+    height: 270px;
+}
+.salesaree img:hover{
+    transform: scale(1.14);
+    transition: 0.3s ease;
+}
+.salesaree p{
+    color: rgb(92, 36, 36);
+    font-size: 18px;
+    text-align: center;
+    cursor: pointer;
+}
+.salesaree p:hover::after{
+    width: 100%;
+}
+.salesaree p::after{
+    content: '';
+    display: block;
+    height: 1.9px;
+    background-color: rgb(62, 36, 36);
+    transition: width 0.5s;
+    width: 0;
+    position: relative;
+    top: 4px;
+}
+.salesaree h3{
+    text-align: center;
+    color: rgb(92, 36, 36);
+    font-size: 15px;
+    cursor: pointer;
+}
+button{
+    width: 130px;
+    height: 50px;
+    background-color: brown;
+    border-radius: 25px;
+    color: white;
+    margin: 20px 700px;
+    font-size: 16px;
+    
+}
+button:hover{
+    background-color: silver;
+    color: brown;
+    border-color: rgb(42, 36, 36);
+    transition: 0.3s ease;
+     transform: scale(1.14);
+}
+a{
+    color: white;
+    text-decoration: none;
+
+}
+.footer{
+    border-top: #bcbaba solid 1px;
+}
+.footercontent{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    margin: 60px 120px;
+}
+.footercontentmain h2{
+    color: rgb(62, 36, 36);
+    font-size: 28px;
+    font-weight: 250;
+}
+.footercontentmain p{
+    color:  rgb(62, 36, 36);
+}
+.footercontentmain li{
+    color:  rgb(62, 36, 36);
+    list-style: none;
+    padding-top: 14px;
+    font-size: 20px;
+}
+.footercontentmain li a{
+    text-decoration: none;
+    font-size: 17px;
+    color:  rgb(62, 36, 36);
+}
+.footercontentmain li a:hover::after{
+    width: 30%;
+}
+li a::after{
+   content: '';
+    display: block;
+    height: 1.9px;
+    background-color: rgb(71, 58, 58);
+    transition: width 0.5s;
+    width:0 ;
+    position: relative;
+    
+}
+.email h2{
+    font-size: 28px;
+    font-weight: 50;
+    color: rgb(62, 36, 36);
+    padding-left: 25px;
+}
+.email input{
+    width: 350px;
+    height: 45px;
+    font-size: 20px;
+    border: solid #251313;
+    border-radius: 20px;
+}
+ .icon{
+    display: flex;
+    justify-content: flex-end;
+    gap: 50px;
+    padding-top: 70px;
+}
+.icon a{
+    text-decoration: none;
+    color: rgb(62, 36, 36);
+    font-size: 25px;
 }
