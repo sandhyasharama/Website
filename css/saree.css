@@ -128,23 +128,23 @@ header a{
     grid-template-columns: repeat(auto-fit,minmax(330px, 1fr));
     gap: 20px;
 }
+
 .categoryimage{
     background:white;
     border-radius: 12px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-    padding: 20px;
     text-align: center;
     transition: transform 0.3s ease;
 }
 .categoryimage:hover{
     transform: translateY(-20px);
-    box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+   
 }
 .categoryimage img{
-    width: 70%;
-    height: 300px;
-    border-radius: 10px;
+    width: 80%;
+    height: 380px;
+    border-radius: 8px;
     margin-bottom: 15px;
+   border: rgb(210, 177, 134) 4px solid;
 }
 .categoryimage h3 {
     font-size: 25px;
